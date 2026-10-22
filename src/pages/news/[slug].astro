@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { gameBySlug } from '../../data/games';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const date = post.data.date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+const schema = [{
+  '@context': 'https://schema.org', '@type': 'NewsArticle', headline: post.data.title,
+  description: post.data.description, datePublished: post.data.date.toISOString(), inLanguage: 'en-NZ',
+  publisher: { '@type': 'Organization', name: 'Card Stockist', url: 'https://cardstockist.com/' },
+}];
+---
+<Base title={post.data.title} description={post.data.description} crumbs={[{ name: 'News', href: '/news/' }, { name: post.data.title, href: `/news/${post.id}/` }]} schema={schema}>
+  <article class="prose">
+    <h1>{post.data.title}</h1>
+    <p class="muted">{date}{post.data.games.length > 0 && ` · ${post.data.games.map((g) => gameBySlug(g)?.short).join(', ')}`}</p>
+    <Content />
+  </article>
+  {post.data.games.filter((g) => gameBySlug(g)?.hub).map((g) => (
+    <p><a href={`/nz/${g}/where-to-buy/`}>Where to buy {gameBySlug(g)?.short} cards in NZ</a></p>
+  ))}
+</Base>

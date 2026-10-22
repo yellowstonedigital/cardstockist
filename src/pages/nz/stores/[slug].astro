@@ -1,0 +1,128 @@
+---
+// One route serves both city pages (/nz/stores/auckland/) and store
+// profiles (/nz/stores/games-lab/). Build fails if a slug clashes.
+import Base from '../../../layouts/Base.astro';
+import StoreCard from '../../../components/StoreCard.astro';
+import StoreFilter from '../../../components/StoreFilter.astro';
+import { independents, getCities, typeLabel, formatDate, type Store, type City } from '../../../lib/stores';
+import { GAMES, gameBySlug } from '../../../data/games';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const stores = independents();
+  const citySlugs = new Set(cities.map((c) => c.slug));
+  const clash = stores.find((s) => citySlugs.has(s.slug));
+  if (clash) throw new Error(`Store slug "${clash.slug}" clashes with a city page. Change the slug in stores.csv.`);
+  return [
+    ...cities.map((city) => ({ params: { slug: city.slug }, props: { kind: 'city' as const, city } })),
+    ...stores.map((store) => ({ params: { slug: store.slug }, props: { kind: 'store' as const, store } })),
+  ];
+}
+
+type Props = { kind: 'city'; city: City } | { kind: 'store'; store: Store };
+const props = Astro.props as Props;
+const all = independents();
+const yn = (v: string) => (v === 'yes' ? 'Yes' : v === 'no' ? 'No' : null);
+
+let page: { title: string; description: string; crumbs: { name: string; href: string }[]; schema: object[] };
+let cityStores: Store[] = [];
+let local: Store[] = [];
+let online: Store[] = [];
+let others: Store[] = [];
+
+if (props.kind === 'city') {
+  const { city } = props;
+  cityStores = all.filter((s) => s.citySlug === city.slug);
+  local = cityStores.filter((s) => s.type !== 'online');
+  online = cityStores.filter((s) => s.type === 'online');
+  page = {
+    title: `Card shops in ${city.name}: ${cityStores.length} TCG stores`,
+    description: `${local.length} trading card stores in ${city.name}${online.length ? ` plus ${online.length} online stores based there` : ''}. Which games each one stocks, singles, events and addresses.`,
+    crumbs: [{ name: 'NZ stores', href: '/nz/stores/' }, { name: city.name, href: `/nz/stores/${city.slug}/` }],
+    schema: [{
+      '@context': 'https://schema.org', '@type': 'ItemList', name: `Card shops in ${city.name}`,
+      itemListElement: cityStores.map((s, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://cardstockist.com/nz/stores/${s.slug}/`, name: s.name })),
+    }],
+  };
+} else {
+  const { store: s } = props;
+  others = all.filter((o) => o.citySlug === s.citySlug && o.slug !== s.slug).slice(0, 6);
+  const gameNames = s.games.map((g) => gameBySlug(g)?.short).filter(Boolean);
+  const isOnline = s.type === 'online';
+  const biz: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': isOnline ? 'OnlineStore' : 'Store',
+    name: s.name,
+    url: s.website || undefined,
+    areaServed: 'NZ',
+  };
+  if (s.address) biz.address = { '@type': 'PostalAddress', streetAddress: s.address, addressLocality: s.city, addressRegion: s.region, addressCountry: 'NZ' };
+  page = {
+    title: `${s.name}: ${isOnline ? 'online card store' : `card shop in ${s.city}`}`,
+    description: `${s.name} ${isOnline ? `is an online trading card store based in ${s.city}` : `is a trading card store in ${s.city}`}. Stocks ${gameNames.slice(0, 5).join(', ')}${s.singles === 'yes' ? ', sells singles' : ''}${s.events === 'yes' ? ', runs events' : ''}.`,
+    crumbs: [
+      { name: 'NZ stores', href: '/nz/stores/' },
+      { name: s.city, href: `/nz/stores/${s.citySlug}/` },
+      { name: s.name, href: `/nz/stores/${s.slug}/` },
+    ],
+    schema: [biz],
+  };
+}
+const cityGames = GAMES.filter((g) => cityStores.some((s) => s.games.includes(g.slug)));
+---
+<Base title={page.title} description={page.description} crumbs={page.crumbs} schema={page.schema}>
+  {props.kind === 'city' ? (
+    <>
+      <h1>Card shops in {props.city.name}</h1>
+      <p class="lede">
+        {local.length} {local.length === 1 ? 'store' : 'stores'} in {props.city.name} selling trading cards
+        {online.length > 0 && <> plus {online.length} online {online.length === 1 ? 'store' : 'stores'} based here</>}.
+        Filter by game to see who stocks what.
+      </p>
+      {cityStores.length > 3 && <StoreFilter games={cityGames} showCity={false} />}
+      {local.length > 0 && (
+        <>
+          <h2>Walk-in stores</h2>
+          <div class="grid">{local.map((s) => <StoreCard store={s} />)}</div>
+        </>
+      )}
+      {online.length > 0 && (
+        <>
+          <h2>Online stores based in {props.city.name}</h2>
+          <p class="muted">These ship nationwide. Some offer local pickup.</p>
+          <div class="grid">{online.map((s) => <StoreCard store={s} />)}</div>
+        </>
+      )}
+      <p class="muted" style="margin-top:24px">Details checked from each store's website. Missing a store? <a href="/about/#listing">Let us know</a>.</p>
+    </>
+  ) : (
+    (() => {
+      const s = props.store;
+      return (
+        <>
+          <h1>{s.name}</h1>
+          <p class="lede">{s.type === 'online' ? `Online trading card store based in ${s.city}.` : `Trading card store in ${s.city}.`}</p>
+          {s.featured && <p class="note">Featured store</p>}
+          <dl class="facts">
+            <dt>Type</dt><dd>{typeLabel[s.type]}</dd>
+            {s.address && <><dt>Address</dt><dd>{s.address}</dd></>}
+            {s.website && <><dt>Website</dt><dd><a href={s.website} rel="noopener">{s.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></dd></>}
+            <dt>Games</dt><dd>{s.games.map((g) => gameBySlug(g)?.name).join(', ') || 'Not confirmed yet'}</dd>
+            {yn(s.singles) && <><dt>Singles</dt><dd>{yn(s.singles)}</dd></>}
+            {yn(s.events) && <><dt>Events</dt><dd>{yn(s.events)}</dd></>}
+            {yn(s.shipsNz) && <><dt>Ships NZ-wide</dt><dd>{yn(s.shipsNz)}</dd></>}
+          </dl>
+          {s.lastChecked && <p class="muted">Details last checked {formatDate(s.lastChecked)}. Stock changes fast, so check with the store before you visit.</p>}
+          {others.length > 0 && (
+            <>
+              <h2>Other card shops in {s.city}</h2>
+              <div class="grid">{others.map((o) => <StoreCard store={o} />)}</div>
+              <p><a href={`/nz/stores/${s.citySlug}/`}>All card shops in {s.city}</a></p>
+            </>
+          )}
+          <p class="muted" style="margin-top:24px">Own this store? <a href="/about/#listing">Update your details or get featured</a>.</p>
+        </>
+      );
+    })()
+  )}
+</Base>

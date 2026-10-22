@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+import { hubGames } from '../data/games';
+import { getCities } from '../lib/stores';
+
+interface Crumb { name: string; href: string }
+interface Props {
+  title: string;
+  description: string;
+  crumbs?: Crumb[];
+  schema?: object[];
+  noindex?: boolean;
+}
+const { title, description, crumbs = [], schema = [], noindex = false } = Astro.props;
+const site = 'Card Stockist';
+const fullTitle = title.includes(site) ? title : `${title} | ${site}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const path = Astro.url.pathname;
+
+const breadcrumbSchema = crumbs.length
+  ? [{
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ name: 'Home', href: '/' }, ...crumbs].map((c, i) => ({
+        '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.href, Astro.site).href,
+      })),
+    }]
+  : [];
+const allSchema = [...breadcrumbSchema, ...schema];
+const topCities = getCities().filter((c) => c.count >= 2).slice(0, 6);
+---
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_NZ" />
+    <meta name="theme-color" content="#16202e" />
+    {allSchema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Card Stockist home">
+          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="3" width="17" height="23" rx="3" fill="#e8590c" transform="rotate(10 17 14)"/><rect x="5" y="6" width="17" height="23" rx="3" fill="#fff"/><path d="M9.5 18l3 3 6-7" stroke="#16202e" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Card Stockist
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="/nz/stores/" aria-current={path.startsWith('/nz/stores') ? 'page' : undefined}>NZ stores</a>
+          {hubGames().map((g) => (
+            <a href={`/nz/${g.slug}/where-to-buy/`} aria-current={path.includes(`/${g.slug}/`) ? 'page' : undefined}>{g.short}</a>
+          ))}
+          <a href="/news/" aria-current={path.startsWith('/news') ? 'page' : undefined}>News</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        {crumbs.length > 0 && (
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            {crumbs.map((c, i) => <> › {i === crumbs.length - 1 ? <span>{c.name}</span> : <a href={c.href}>{c.name}</a>}</>)}
+          </nav>
+        )}
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <strong>Card Stockist</strong>
+            <p style="max-width:22em;margin:6px 0 0">Where to buy trading cards in New Zealand. Every NZ card store, what they stock and when new sets land.</p>
+          </div>
+          <div>
+            <strong>Card shops by city</strong>
+            <ul>{topCities.map((c) => <li><a href={`/nz/stores/${c.slug}/`}>{c.name}</a></li>)}</ul>
+          </div>
+          <div>
+            <strong>Site</strong>
+            <ul>
+              <li><a href="/nz/stores/">Store directory</a></li>
+              <li><a href="/news/">News</a></li>
+              <li><a href="/about/">About and listing info</a></li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:24px">Pokémon and other game names are trademarks of their owners. Card Stockist is an independent guide and isn't affiliated with any game publisher.</p>
+      </div>
+    </footer>
+  </body>
+</html>

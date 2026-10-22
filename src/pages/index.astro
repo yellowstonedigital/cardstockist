@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { getCities, independents, chains } from '../lib/stores';
+import { hubGames } from '../data/games';
+
+const cities = getCities();
+const storeCount = independents().length;
+const news = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+const now = new Date();
+const upcoming = (await getCollection('sets', ({ data }) => !data.draft && !!data.nzRelease && data.nzRelease >= new Date(now.toDateString())))
+  .sort((a, b) => a.data.nzRelease!.valueOf() - b.data.nzRelease!.valueOf())
+  .slice(0, 3);
+const fmt = (d: Date) => d.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Card Stockist',
+  url: 'https://cardstockist.com/',
+  inLanguage: 'en-NZ',
+}];
+---
+<Base
+  title="Card Stockist: where to buy trading cards in NZ"
+  description={`Find trading card stores across New Zealand. ${storeCount} NZ card shops listed with the games they stock, singles, events and online shipping.`}
+  schema={schema}
+>
+  <section class="hero">
+    <h1>Find where to buy trading cards in New Zealand</h1>
+    <p class="lede">Every NZ card store in one place, with the games they stock, whether they sell singles, and when new sets land here. Starting with Pokémon.</p>
+    <div class="cta-row">
+      <a class="btn" href="/nz/stores/">Browse {storeCount} NZ stores</a>
+      {hubGames().map((g) => <a class="btn secondary" href={`/nz/${g.slug}/where-to-buy/`}>Where to buy {g.short} cards</a>)}
+    </div>
+  </section>
+
+  <h2>Card shops by city</h2>
+  <div class="grid">
+    {cities.map((c) => (
+      <a class="tile tile-link" href={`/nz/stores/${c.slug}/`}>
+        <strong>Card shops in {c.name}</strong>
+        <span class="muted">{c.count} {c.count === 1 ? 'store' : 'stores'}</span>
+      </a>
+    ))}
+  </div>
+
+  {upcoming.length > 0 && (
+    <>
+      <h2>Coming soon to NZ</h2>
+      <div class="grid">
+        {upcoming.map((s) => (
+          <a class="tile tile-link" href={`/${s.data.game}/sets/${s.id.split('/').pop()}/`}>
+            <strong>{s.data.title}</strong>
+            <span class="muted">NZ release {fmt(s.data.nzRelease!)}</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
+  {news.length > 0 && (
+    <>
+      <h2>Latest news</h2>
+      <div class="grid">
+        {news.map((n) => (
+          <a class="tile tile-link" href={`/news/${n.id}/`}>
+            <strong>{n.data.title}</strong>
+            <span class="muted">{fmt(n.data.date)}</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
+  <h2>Big retailers</h2>
+  <p>National chains also carry some sealed product, mostly Pokémon. Stock is patchy and they don't sell singles, so check the independents first.</p>
+  <p>{chains().map((c, i) => <>{i > 0 && ', '}<a href={c.website} rel="nofollow noopener">{c.name}</a></>)}</p>
+</Base>

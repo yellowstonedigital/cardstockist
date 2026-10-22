@@ -1,0 +1,60 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import StoreCard from '../../../../components/StoreCard.astro';
+import StoreFilter from '../../../../components/StoreFilter.astro';
+import { storesSelling, chains, getCities } from '../../../../lib/stores';
+import { hubGames, type Game } from '../../../../data/games';
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+  return hubGames().map((game) => ({ params: { game: game.slug }, props: { game } }));
+}
+const { game } = Astro.props as { game: Game };
+const stores = storesSelling(game.slug);
+const walkIn = stores.filter((s) => s.type !== 'online');
+const online = stores.filter((s) => s.type === 'online' || s.shipsNz === 'yes');
+const singles = stores.filter((s) => s.singles === 'yes');
+const bigBox = chains().filter((c) => c.games.includes(game.slug) || c.games.length === 0);
+const cityIds = new Set(stores.map((s) => s.citySlug));
+const cities = getCities().filter((c) => cityIds.has(c.slug));
+const sets = (await getCollection('sets', ({ data }) => !data.draft && data.game === game.slug && !!data.nzRelease))
+  .sort((a, b) => b.data.nzRelease!.valueOf() - a.data.nzRelease!.valueOf())
+  .slice(0, 3);
+---
+<Base
+  title={`Where to buy ${game.short} cards in NZ (${stores.length} stores)`}
+  description={`Where to buy ${game.name} cards in New Zealand: ${stores.length} NZ stores, ${singles.length} selling singles, plus online stores that ship nationwide and big retailers.`}
+  crumbs={[{ name: game.short, href: `/nz/${game.slug}/where-to-buy/` }, { name: 'Where to buy', href: `/nz/${game.slug}/where-to-buy/` }]}
+>
+  <h1>Where to buy {game.short} cards in NZ</h1>
+  <p class="lede">
+    {stores.length} New Zealand stores stock {game.name}: {walkIn.length} you can walk into, and {online.length} that sell online.
+    {singles.length} sell singles, so you can buy the exact card you want instead of chasing it in packs.
+  </p>
+
+  <h2>Quick answer</h2>
+  <ul>
+    <li><strong>For sealed product at RRP:</strong> independent card shops usually get stock on release day and run pre-orders. Big retailers get some, but it sells out fast.</li>
+    <li><strong>For singles:</strong> filter below for stores that sell singles. Many list their full singles stock online.</li>
+    <li><strong>For playing:</strong> filter for stores that run events, including leagues and prereleases.</li>
+  </ul>
+
+  {sets.length > 0 && (
+    <p>Latest sets: {sets.map((s, i) => <>{i > 0 && ', '}<a href={`/${game.slug}/sets/${s.id.split('/').pop()}/`}>{s.data.title}</a></>)}. <a href={`/nz/${game.slug}/releases/`}>All NZ release dates</a>.</p>
+  )}
+
+  <h2>NZ stores that sell {game.short}</h2>
+  <StoreFilter cities={cities} games={[]} />
+  <div class="grid">{stores.map((s) => <StoreCard store={s} highlight={game.slug} />)}</div>
+
+  {bigBox.length > 0 && (
+    <>
+      <h2>Big retailers</h2>
+      <p>These carry some sealed {game.short} product. They don't sell singles, and range varies by store.</p>
+      <ul>{bigBox.map((c) => <li><a href={c.website} rel="nofollow noopener">{c.name}</a></li>)}</ul>
+    </>
+  )}
+
+  <h2>Card shops by city</h2>
+  <p>{cities.map((c, i) => <>{i > 0 && ' · '}<a href={`/nz/stores/${c.slug}/`}>{c.name}</a></>)}</p>
+</Base>

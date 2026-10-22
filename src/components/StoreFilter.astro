@@ -1,0 +1,64 @@
+---
+import type { City } from '../lib/stores';
+import type { Game } from '../data/games';
+
+interface Props { cities?: City[]; games: Game[]; showCity?: boolean }
+const { cities = [], games, showCity = true } = Astro.props;
+---
+<form class="filters" data-filter onsubmit="return false">
+  <input type="search" name="q" placeholder="Search stores" aria-label="Search stores" />
+  {showCity && (
+    <select name="city" aria-label="City">
+      <option value="">All cities</option>
+      {cities.map((c) => <option value={c.slug}>{c.name}</option>)}
+    </select>
+  )}
+  <select name="game" aria-label="Game">
+    <option value="">All games</option>
+    {games.map((g) => <option value={g.slug}>{g.short}</option>)}
+  </select>
+  <select name="type" aria-label="Store type">
+    <option value="">Walk-in or online</option>
+    <option value="walkin">Walk-in stores</option>
+    <option value="online">Online only</option>
+  </select>
+  <label class="check"><input type="checkbox" name="singles" /> Sells singles</label>
+  <label class="check"><input type="checkbox" name="events" /> Runs events</label>
+</form>
+<p class="count" data-count aria-live="polite"></p>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-filter]');
+  const count = document.querySelector('[data-count]');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-store]')];
+  function apply() {
+    if (!form) return;
+    const f = new FormData(form);
+    const q = String(f.get('q') || '').trim().toLowerCase();
+    const city = String(f.get('city') || '');
+    const game = String(f.get('game') || '');
+    const type = String(f.get('type') || '');
+    let shown = 0;
+    for (const el of cards) {
+      const d = el.dataset;
+      const ok =
+        (!q || (d.name || '').includes(q)) &&
+        (!city || d.city === city) &&
+        (!game || (d.games || '').split(' ').includes(game)) &&
+        (!type || (type === 'online' ? d.type === 'online' : d.type !== 'online')) &&
+        (!f.get('singles') || d.singles === 'yes') &&
+        (!f.get('events') || d.events === 'yes');
+      el.hidden = !ok;
+      if (ok) shown++;
+    }
+    if (count) count.textContent = `Showing ${shown} of ${cards.length} stores`;
+  }
+  form?.addEventListener('input', apply);
+  // Allow links like /nz/stores/?game=pokemon
+  const params = new URLSearchParams(location.search);
+  for (const [k, v] of params) {
+    const field = form?.elements.namedItem(k) as HTMLInputElement | HTMLSelectElement | null;
+    if (field) { if (field instanceof HTMLInputElement && field.type === 'checkbox') field.checked = true; else field.value = v; }
+  }
+  apply();
+</script>

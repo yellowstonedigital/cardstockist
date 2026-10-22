@@ -1,0 +1,49 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StoreCard from '../../../components/StoreCard.astro';
+import { getCollection, render } from 'astro:content';
+import { gameBySlug } from '../../../data/games';
+import { storesSelling } from '../../../lib/stores';
+
+export async function getStaticPaths() {
+  const sets = await getCollection('sets', ({ data }) => !data.draft);
+  return sets.map((entry) => ({ params: { game: entry.data.game, set: entry.id.split('/').pop() }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const game = gameBySlug(entry.data.game)!;
+const { Content } = await render(entry);
+const stores = storesSelling(game.slug).filter((s) => s.type !== 'chain');
+const preorder = stores.filter((s) => s.featured).concat(stores.filter((s) => !s.featured)).slice(0, 12);
+const date = entry.data.nzRelease?.toLocaleDateString('en-NZ', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const schema = [{
+  '@context': 'https://schema.org', '@type': 'Article', headline: `${entry.data.title}: NZ release date, RRP and where to buy`,
+  description: entry.data.description, inLanguage: 'en-NZ',
+}];
+---
+<Base
+  title={`${entry.data.title}: NZ release date, prices and where to buy`}
+  description={entry.data.description}
+  crumbs={[{ name: game.short, href: `/nz/${game.slug}/where-to-buy/` }, { name: 'Releases', href: `/nz/${game.slug}/releases/` }, { name: entry.data.title, href: Astro.url.pathname }]}
+  schema={schema}
+>
+  <h1>{entry.data.title}: NZ release date and where to buy</h1>
+  <p class="lede">{entry.data.description}</p>
+  {date && <p class="note"><strong>NZ release:</strong> {date}</p>}
+
+  {entry.data.products.length > 0 && (
+    <>
+      <h2>Products and NZ prices</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Product</th><th>NZ RRP</th></tr></thead>
+        <tbody>{entry.data.products.map((p) => <tr><td>{p.name}</td><td>{p.rrp ?? 'TBC'}</td></tr>)}</tbody>
+      </table></div>
+    </>
+  )}
+
+  <div class="prose"><Content /></div>
+
+  <h2>Where to buy {entry.data.title} in NZ</h2>
+  <p>These NZ stores stock {game.short}. Most take pre-orders in the weeks before release.</p>
+  <div class="grid">{preorder.map((s) => <StoreCard store={s} highlight={game.slug} />)}</div>
+  <p><a href={`/nz/${game.slug}/where-to-buy/`}>See all {stores.length} NZ stores that sell {game.short}</a></p>
+</Base>

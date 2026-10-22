@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { gameBySlug } from '../../data/games';
+
+const posts = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base
+  title="NZ trading card news"
+  description="Trading card news for New Zealand collectors and players: NZ release dates, restocks, store news and events."
+  crumbs={[{ name: 'News', href: '/news/' }]}
+>
+  <h1>NZ trading card news</h1>
+  <p class="lede">Release dates, restocks, store news and events, with the New Zealand details you won't get from overseas sites.</p>
+  {posts.length === 0 ? <p>First posts coming soon.</p> : (
+    <div class="grid">
+      {posts.map((p) => (
+        <a class="tile tile-link" href={`/news/${p.id}/`}>
+          <strong>{p.data.title}</strong>
+          <span class="muted">{fmt(p.data.date)}{p.data.games.length > 0 && ` · ${p.data.games.map((g) => gameBySlug(g)?.short).join(', ')}`}</span>
+          <p style="margin:6px 0 0;color:var(--ink-2);font-size:0.95rem">{p.data.description}</p>
+        </a>
+      ))}
+    </div>
+  )}
+</Base>

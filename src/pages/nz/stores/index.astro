@@ -1,0 +1,32 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StoreCard from '../../../components/StoreCard.astro';
+import StoreFilter from '../../../components/StoreFilter.astro';
+import { independents, getCities } from '../../../lib/stores';
+import { GAMES } from '../../../data/games';
+
+const stores = independents();
+const cities = getCities();
+const games = GAMES.filter((g) => stores.some((s) => s.games.includes(g.slug)));
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Trading card stores in New Zealand',
+  numberOfItems: stores.length,
+  itemListElement: stores.map((s, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://cardstockist.com/nz/stores/${s.slug}/`, name: s.name })),
+}];
+---
+<Base
+  title="NZ trading card stores: every card shop in New Zealand"
+  description={`Directory of ${stores.length} trading card stores in New Zealand. Filter by city, game (Pokémon, One Piece, Magic and more), singles and events.`}
+  crumbs={[{ name: 'NZ stores', href: '/nz/stores/' }]}
+  schema={schema}
+>
+  <h1>Trading card stores in New Zealand</h1>
+  <p class="lede">{stores.length} NZ card shops and online stores. Filter by city, by game, or by whether they sell singles and run events.</p>
+  <StoreFilter cities={cities} games={games} />
+  <div class="grid">
+    {stores.map((s) => <StoreCard store={s} />)}
+  </div>
+  <p class="muted" style="margin-top:24px">Run a store that's missing or listed wrong? <a href="/about/#listing">Get it added or fixed</a>, it's free.</p>
+</Base>

@@ -1,0 +1,42 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { hubGames, type Game } from '../../../../data/games';
+
+export function getStaticPaths() {
+  return hubGames().map((game) => ({ params: { game: game.slug }, props: { game } }));
+}
+const { game } = Astro.props as { game: Game };
+const sets = (await getCollection('sets', ({ data }) => !data.draft && data.game === game.slug && !!data.nzRelease))
+  .sort((a, b) => b.data.nzRelease!.valueOf() - a.data.nzRelease!.valueOf());
+const today = new Date(new Date().toDateString());
+const upcoming = sets.filter((s) => s.data.nzRelease! >= today).reverse();
+const past = sets.filter((s) => s.data.nzRelease! < today);
+const fmt = (d: Date) => d.toLocaleDateString('en-NZ', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+const href = (id: string) => `/${game.slug}/sets/${id.split('/').pop()}/`;
+---
+<Base
+  title={`${game.short} TCG release dates in NZ`}
+  description={`Upcoming ${game.name} set release dates in New Zealand, with NZ RRP and which stores take pre-orders.`}
+  crumbs={[{ name: game.short, href: `/nz/${game.slug}/where-to-buy/` }, { name: 'NZ release dates', href: `/nz/${game.slug}/releases/` }]}
+>
+  <h1>{game.short} TCG release dates in NZ</h1>
+  <p class="lede">When new {game.short} sets land in New Zealand, and where to pre-order them.</p>
+  <h2>Upcoming</h2>
+  {upcoming.length ? (
+    <div class="table-wrap"><table>
+      <thead><tr><th>Set</th><th>NZ release</th></tr></thead>
+      <tbody>{upcoming.map((s) => <tr><td><a href={href(s.id)}>{s.data.title}</a></td><td>{fmt(s.data.nzRelease!)}</td></tr>)}</tbody>
+    </table></div>
+  ) : <p>No upcoming sets listed yet.</p>}
+  {past.length > 0 && (
+    <>
+      <h2>Recent releases</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Set</th><th>NZ release</th></tr></thead>
+        <tbody>{past.map((s) => <tr><td><a href={href(s.id)}>{s.data.title}</a></td><td>{fmt(s.data.nzRelease!)}</td></tr>)}</tbody>
+      </table></div>
+    </>
+  )}
+  <p style="margin-top:24px"><a href={`/nz/${game.slug}/where-to-buy/`}>Where to buy {game.short} cards in NZ</a></p>
+</Base>

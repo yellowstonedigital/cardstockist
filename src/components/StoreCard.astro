@@ -1,0 +1,31 @@
+---
+import type { Store } from '../lib/stores';
+import { typeLabel } from '../lib/stores';
+import { gameBySlug } from '../data/games';
+
+interface Props { store: Store; highlight?: string }
+const { store: s, highlight } = Astro.props;
+// Show the highlighted game first so the card answers the page's question.
+const games = highlight && s.games.includes(highlight) ? [highlight, ...s.games.filter((g) => g !== highlight)] : s.games;
+const place = s.type === 'online' ? `Online · ${s.city}` : s.city;
+---
+<article
+  class:list={['tile', { featured: s.featured }]}
+  data-store
+  data-name={s.name.toLowerCase()}
+  data-city={s.citySlug}
+  data-type={s.type}
+  data-games={s.games.join(' ')}
+  data-singles={s.singles}
+  data-events={s.events}
+>
+  <h3><a href={`/nz/stores/${s.slug}/`}>{s.name}</a></h3>
+  <p class="meta">{place} · {typeLabel[s.type]}</p>
+  <ul class="badges">
+    {s.featured && <li class="badge feat">Featured</li>}
+    {s.singles === 'yes' && <li class="badge yes">Singles</li>}
+    {s.events === 'yes' && <li class="badge yes">Events</li>}
+    {games.slice(0, 6).map((g) => <li class="badge">{gameBySlug(g)?.short}</li>)}
+    {games.length > 6 && <li class="badge">+{games.length - 6} more</li>}
+  </ul>
+</article>
