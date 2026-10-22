@@ -38,6 +38,12 @@ export const rarityRank = (r: string) => {
   const i = RARITY_ORDER.findIndex((x) => x.toLowerCase() === r.toLowerCase());
   return i === -1 ? 0 : i;
 };
+// Card images go through our own /img/ route (see worker/index.js) so they're cached at the edge.
+export const cardImg = (tcgdexImage: string | null, size: 'low' | 'high') =>
+  tcgdexImage ? tcgdexImage.replace('https://assets.tcgdex.net/en/', '/img/card/') + `/${size}.webp` : null;
+// TCGdex mixes casing ("Special illustration rare"), so normalise to Title Case.
+export const rarityLabel = (r: string) => r.replace(/\b\w/g, (ch) => ch.toUpperCase());
+
 export const nzd = (n: number | null | undefined) =>
   n == null ? '' : n < 1 ? 'under $1' : `$${n.toLocaleString('en-NZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 

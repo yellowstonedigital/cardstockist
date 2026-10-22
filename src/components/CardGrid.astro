@@ -1,12 +1,13 @@
 ---
 import type { CardSet } from '../lib/cards';
-import { rarityRank, nzd, trackLink, STORE_NAMES } from '../lib/cards';
+import { rarityRank, nzd, trackLink, STORE_NAMES, cardImg, rarityLabel } from '../lib/cards';
 
 interface Props { set: CardSet; campaign: string }
 const { set, campaign } = Astro.props;
+const norm = set.cards.map((c) => ({ ...c, rarity: rarityLabel(c.rarity) }));
 const total = set.official ?? set.cards.length;
-const cards = [...set.cards].sort((a, b) => (b.marketNzd ?? 0) - (a.marketNzd ?? 0) || Number(a.num) - Number(b.num));
-const rarities = [...new Set(set.cards.map((c) => c.rarity))].sort((a, b) => rarityRank(b) - rarityRank(a));
+const cards = [...norm].sort((a, b) => (b.marketNzd ?? 0) - (a.marketNzd ?? 0) || Number(a.num) - Number(b.num));
+const rarities = [...new Set(norm.map((c) => c.rarity))].sort((a, b) => rarityRank(b) - rarityRank(a));
 const updated = new Date(set.fetchedAt).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
 <div class="cg-controls" data-cg-controls>
@@ -23,12 +24,14 @@ const updated = new Date(set.fetchedAt).toLocaleDateString('en-NZ', { day: 'nume
 </div>
 
 <ol class="cg" data-cg>
-  {cards.map((c) => {
+  {cards.map((c, i) => {
     const s = c.singles[0];
+    const low = cardImg(c.image, 'low');
+    const high = cardImg(c.image, 'high');
     return (
       <li class="cg-card" data-num={c.num} data-value={c.marketNzd ?? 0} data-rarity={c.rarity}>
-        {c.image
-          ? <img src={`${c.image}/high.webp`} alt={`${c.name} ${c.num}/${total} ${set.name}`} loading="lazy" decoding="async" width="600" height="825" />
+        {low
+          ? <img src={low} srcset={`${low} 245w, ${high} 600w`} sizes="(max-width: 480px) 46vw, 260px" alt={`${c.name} ${c.num}/${total} ${set.name}`} loading={i < 8 ? 'eager' : 'lazy'} decoding="async" width="600" height="825" />
           : <div class="cg-noimg">Image coming soon</div>}
         <div class="cg-body">
           <h3>{c.name}</h3>
