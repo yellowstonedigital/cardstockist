@@ -1,0 +1,7 @@
+{
+  "getthosecardsCollection": "all-pokemon-trading-card-game-mega-evolution-singles",
+  "sets": [
+    { "tcgdexId": "me05", "storeSetCode": "ME05" },
+    { "tcgdexId": "me06", "storeSetCode": "ME06" }
+  ]
+}

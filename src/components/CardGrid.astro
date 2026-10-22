@@ -1,0 +1,89 @@
+---
+import type { CardSet } from '../lib/cards';
+import { rarityRank, nzd, trackLink, STORE_NAMES } from '../lib/cards';
+
+interface Props { set: CardSet; campaign: string }
+const { set, campaign } = Astro.props;
+const total = set.official ?? set.cards.length;
+const cards = [...set.cards].sort((a, b) => (b.marketNzd ?? 0) - (a.marketNzd ?? 0) || Number(a.num) - Number(b.num));
+const rarities = [...new Set(set.cards.map((c) => c.rarity))].sort((a, b) => rarityRank(b) - rarityRank(a));
+const updated = new Date(set.fetchedAt).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<div class="cg-controls" data-cg-controls>
+  <div class="cg-chips" role="group" aria-label="Filter by rarity">
+    <button type="button" class="chip on" data-rarity="">All {set.cards.length}</button>
+    {rarities.map((r) => <button type="button" class="chip" data-rarity={r}>{r}</button>)}
+  </div>
+  <label class="cg-sort">Sort
+    <select data-sort>
+      <option value="value">Most valuable</option>
+      <option value="num">Card number</option>
+    </select>
+  </label>
+</div>
+
+<ol class="cg" data-cg>
+  {cards.map((c) => {
+    const s = c.singles[0];
+    return (
+      <li class="cg-card" data-num={c.num} data-value={c.marketNzd ?? 0} data-rarity={c.rarity}>
+        {c.image
+          ? <img src={`${c.image}/high.webp`} alt={`${c.name} ${c.num}/${total} ${set.name}`} loading="lazy" decoding="async" width="600" height="825" />
+          : <div class="cg-noimg">Image coming soon</div>}
+        <div class="cg-body">
+          <h3>{c.name}</h3>
+          <p class="cg-meta">{c.num}/{String(total).padStart(3, '0')} · {c.rarity}</p>
+          {c.marketNzd != null && <p class="cg-price"><span>Market</span> <strong>{nzd(c.marketNzd)}</strong></p>}
+          {s && (
+            <a class:list={['cg-buy', { out: !s.inStock }]} href={trackLink(s.url, campaign)} rel="sponsored noopener" target="_blank">
+              {s.inStock ? `Buy at ${STORE_NAMES[s.store] ?? s.store} ${s.priceNzd != null ? nzd(s.priceNzd) : ''}` : `${STORE_NAMES[s.store] ?? s.store}: sold out`}
+            </a>
+          )}
+        </div>
+      </li>
+    );
+  })}
+</ol>
+<p class="muted">Market prices are the Cardmarket trend price converted to NZD at {set.eurToNzd.toFixed(2)}, updated {updated}. Store prices and stock are taken from each store's site at the same time, so check the store before you buy.</p>
+
+<style>
+  .cg-controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin: 12px 0 16px; }
+  .cg-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font: inherit; font-size: 0.85rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); cursor: pointer; }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .cg-sort { font-size: 0.9rem; color: var(--ink-2); display: flex; gap: 8px; align-items: center; }
+  .cg-sort select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); }
+  .cg { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  @media (max-width: 480px) { .cg { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+  .cg-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+  .cg-card img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 825; object-fit: cover; background: #eee8de; }
+  .cg-noimg { aspect-ratio: 600 / 825; display: grid; place-items: center; color: var(--muted); background: #eee8de; font-size: 0.9rem; }
+  .cg-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
+  .cg-body h3 { margin: 0; font-size: 1rem; }
+  .cg-meta { margin: 0; font-size: 0.8rem; color: var(--muted); }
+  .cg-price { margin: 4px 0 6px; font-size: 0.9rem; color: var(--ink-2); }
+  .cg-price strong { color: var(--ink); font-size: 1.05rem; }
+  .cg-buy { margin-top: auto; display: block; text-align: center; padding: 8px 10px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 650; font-size: 0.88rem; }
+  .cg-buy.out { background: #f1ede6; color: var(--ink-2); font-weight: 500; }
+</style>
+
+<script>
+  const list = document.querySelector<HTMLOListElement>('[data-cg]');
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('[data-cg-controls] .chip')];
+  const sort = document.querySelector<HTMLSelectElement>('[data-sort]');
+  const items = list ? [...list.children] as HTMLElement[] : [];
+  function order() {
+    if (!list || !sort) return;
+    const by = sort.value;
+    items.sort((a, b) => by === 'num'
+      ? Number(a.dataset.num) - Number(b.dataset.num)
+      : Number(b.dataset.value) - Number(a.dataset.value));
+    items.forEach((el) => list.appendChild(el));
+  }
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    chips.forEach((c) => c.classList.toggle('on', c === chip));
+    const r = chip.dataset.rarity;
+    items.forEach((el) => { el.hidden = !!r && el.dataset.rarity !== r; });
+  }));
+  sort?.addEventListener('change', order);
+</script>

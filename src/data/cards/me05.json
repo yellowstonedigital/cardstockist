@@ -1,0 +1,2052 @@
+{
+ "tcgdexId": "me05",
+ "name": "Pitch Black",
+ "official": 84,
+ "total": 120,
+ "releaseDate": "2026-07-17",
+ "fetchedAt": "2026-10-22T09:00:00Z",
+ "priceSource": "Cardmarket trend via TCGdex",
+ "eurToNzd": 1.9735,
+ "cards": [
+  {
+   "num": "001",
+   "name": "Tropius",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/001",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/tropius-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "002",
+   "name": "Grubbin",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/002",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/grubbin-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "003",
+   "name": "Fomantis",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/003",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/fomantis-3",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "004",
+   "name": "Lurantis ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/004",
+   "marketEur": 0.45,
+   "marketNzd": 0.89,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/lurantis-ex",
+     "priceNzd": 3.99,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "005",
+   "name": "Poltchageist",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/005",
+   "marketEur": 0.05,
+   "marketNzd": 0.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/poltchageist-4",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "006",
+   "name": "Sinistcha",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/006",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/sinistcha-1",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "007",
+   "name": "Heatran",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/007",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/heatran-7",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "008",
+   "name": "Mega Delphox ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/008",
+   "marketEur": 0.56,
+   "marketNzd": 1.11,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-delphox-ex",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "009",
+   "name": "Sizzlipede",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/009",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/sizzlipede-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "010",
+   "name": "Centiskorch",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/010",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/centiskorch-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "011",
+   "name": "Charcadet",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/011",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/charcadet-13",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "012",
+   "name": "Armarouge",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/012",
+   "marketEur": 0.06,
+   "marketNzd": 0.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/armarouge-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "013",
+   "name": "Goldeen",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/013",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/goldeen-4",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "014",
+   "name": "Seaking",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/014",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/seaking-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "015",
+   "name": "Wailmer",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/015",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/wailmer-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "016",
+   "name": "Wailord ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/016",
+   "marketEur": 0.45,
+   "marketNzd": 0.89,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/wailord-ex-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "017",
+   "name": "Relicanth",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/017",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/relicanth-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "018",
+   "name": "Popplio",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/018",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/popplio-1",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "019",
+   "name": "Brionne",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/019",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/brionne-1",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "020",
+   "name": "Primarina",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/020",
+   "marketEur": 0.07,
+   "marketNzd": 0.14,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/primarina-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "021",
+   "name": "Finizen",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/021",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/finizen-3",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "022",
+   "name": "Palafin",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/022",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/palafin-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "023",
+   "name": "Electrike",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/023",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/electrike-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "024",
+   "name": "Manectric",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/024",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/manectric-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "025",
+   "name": "Charjabug",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/025",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/charjabug-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "026",
+   "name": "Vikavolt",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/026",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/vikavolt-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "027",
+   "name": "Mega Zeraora ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/027",
+   "marketEur": 0.57,
+   "marketNzd": 1.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-zeraora-ex-1",
+     "priceNzd": 3.99,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "028",
+   "name": "Miraidon",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/028",
+   "marketEur": 0.06,
+   "marketNzd": 0.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/miraidon-4",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "029",
+   "name": "Slowpoke",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/029",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/slowpoke-10",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "030",
+   "name": "Slowbro",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/030",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/slowbro-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "031",
+   "name": "Mega Slowbro ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/031",
+   "marketEur": 0.55,
+   "marketNzd": 1.09,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-slowbro-ex",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "032",
+   "name": "Jynx",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/032",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/jynx-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "033",
+   "name": "Shuppet",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/033",
+   "marketEur": 0.05,
+   "marketNzd": 0.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/shuppet-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "034",
+   "name": "Banette",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/034",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/banette-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "035",
+   "name": "Spiritomb",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/035",
+   "marketEur": 0.06,
+   "marketNzd": 0.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/spiritomb-13",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "036",
+   "name": "Litwick",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/036",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/litwick-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "037",
+   "name": "Lampent",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/037",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/lampent-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "038",
+   "name": "Mega Chandelure ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/038",
+   "marketEur": 0.65,
+   "marketNzd": 1.28,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-chandelure-ex-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "039",
+   "name": "Dhelmise",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/039",
+   "marketEur": 0.05,
+   "marketNzd": 0.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/dhelmise-7",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "040",
+   "name": "Marshadow",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/040",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/marshadow-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "041",
+   "name": "Annihilape",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/041",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/annihilape-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "042",
+   "name": "Mankey",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/042",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mankey-10",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "043",
+   "name": "Primeape",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/043",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/primeape-10",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "044",
+   "name": "Cranidos",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/044",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/cranidos-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "045",
+   "name": "Rampardos ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/045",
+   "marketEur": 0.5,
+   "marketNzd": 0.99,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/rampardos-ex-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "046",
+   "name": "Drilbur",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/046",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/drilbur-8",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "047",
+   "name": "Koraidon",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/047",
+   "marketEur": 0.05,
+   "marketNzd": 0.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/koraidon-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "048",
+   "name": "Mega Darkrai ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/048",
+   "marketEur": 0.81,
+   "marketNzd": 1.6,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-darkrai-ex-2",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "049",
+   "name": "Vullaby",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/049",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/vullaby-6",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "050",
+   "name": "Mandibuzz",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/050",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mandibuzz-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "051",
+   "name": "Inkay",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/051",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/inkay-7",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "052",
+   "name": "Malamar",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/052",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/malamar-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "053",
+   "name": "Nickit",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/053",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/nickit-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "054",
+   "name": "Thievul",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/054",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/thievul-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "055",
+   "name": "Morpeko ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/055",
+   "marketEur": 0.5,
+   "marketNzd": 0.99,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/morpeko-ex-1",
+     "priceNzd": 3.99,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "056",
+   "name": "Zarude",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/056",
+   "marketEur": 0.06,
+   "marketNzd": 0.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/zarude-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "057",
+   "name": "Maschiff",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/057",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/maschiff-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "058",
+   "name": "Mabosstiff",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/058",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mabosstiff-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "059",
+   "name": "Chi-Yu",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/059",
+   "marketEur": 0.06,
+   "marketNzd": 0.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/chi-yu-3",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "060",
+   "name": "Skarmory",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/060",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/skarmory-9",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "061",
+   "name": "Shieldon",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/061",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/shieldon-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "062",
+   "name": "Bastiodon",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/062",
+   "marketEur": 0.08,
+   "marketNzd": 0.16,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/bastiodon-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "063",
+   "name": "Bronzor",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/063",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/bronzor-12",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "064",
+   "name": "Bronzong",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/064",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/bronzong-12",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "065",
+   "name": "Mega Excadrill ex",
+   "rarity": "Double Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/065",
+   "marketEur": 0.67,
+   "marketNzd": 1.32,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-excadrill-ex-1",
+     "priceNzd": 3.99,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "066",
+   "name": "Pikipek",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/066",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/pikipek-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "067",
+   "name": "Trumbeak",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/067",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/trumbeak-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "068",
+   "name": "Toucannon",
+   "rarity": "Uncommon",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/068",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/toucannon-2",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "069",
+   "name": "Type: Null",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/069",
+   "marketEur": 0.02,
+   "marketNzd": 0.04,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/type-null-3",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "070",
+   "name": "Silvally",
+   "rarity": "Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/070",
+   "marketEur": 0.05,
+   "marketNzd": 0.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/silvally",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "071",
+   "name": "Bombirdier",
+   "rarity": "Common",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/071",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/bombirdier-5",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "072",
+   "name": "Antique Armor Fossil",
+   "rarity": "Common",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/072",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/antique-armor-fossil",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "073",
+   "name": "Antique Skull Fossil",
+   "rarity": "Common",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/073",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/antique-skull-fossil",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "074",
+   "name": "Backtrack Badge",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/074",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/backtrack-badge",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "075",
+   "name": "Dark Bell",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/075",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/dark-bell",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "076",
+   "name": "Fossil Quarry",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/076",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/fossil-quarry",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "077",
+   "name": "Gladion's Final Battle",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/077",
+   "marketEur": 0.04,
+   "marketNzd": 0.08,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gladions-final-battle",
+     "priceNzd": 0.5,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "078",
+   "name": "Gwynn",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/078",
+   "marketEur": 0.08,
+   "marketNzd": 0.16,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gwynn",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "079",
+   "name": "Jett",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/079",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/jett",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "080",
+   "name": "Misty's Vitality",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/080",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mistys-vitality",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "081",
+   "name": "Rust Syndicate Grunt",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/081",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/rust-syndicate-grunt",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "082",
+   "name": "Tremendous Bomb",
+   "rarity": "Uncommon",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/082",
+   "marketEur": 0.03,
+   "marketNzd": 0.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/tremendous-bomb",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "083",
+   "name": "Shadowy Darkness Energy",
+   "rarity": "Rare",
+   "category": "Energy",
+   "image": "https://assets.tcgdex.net/en/me/me05/083",
+   "marketEur": 0.07,
+   "marketNzd": 0.14,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/shadowy-darkness-energy",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "084",
+   "name": "Voltaic Lightning Energy",
+   "rarity": "Rare",
+   "category": "Energy",
+   "image": "https://assets.tcgdex.net/en/me/me05/084",
+   "marketEur": 0.08,
+   "marketNzd": 0.16,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/voltaic-lightning-energy",
+     "priceNzd": 0.5,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "085",
+   "name": "Fomantis",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/085",
+   "marketEur": 2.33,
+   "marketNzd": 4.6,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/fomantis-4",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "086",
+   "name": "Armarouge",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/086",
+   "marketEur": 2.55,
+   "marketNzd": 5.03,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/armarouge-7",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "087",
+   "name": "Goldeen",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/087",
+   "marketEur": 6.58,
+   "marketNzd": 12.99,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/goldeen-5",
+     "priceNzd": 7.34,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "088",
+   "name": "Primarina",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/088",
+   "marketEur": 2.56,
+   "marketNzd": 5.05,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/primarina-1",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "089",
+   "name": "Manectric",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/089",
+   "marketEur": 2.37,
+   "marketNzd": 4.68,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/manectric-4",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "090",
+   "name": "Slowbro",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/090",
+   "marketEur": 6.76,
+   "marketNzd": 13.34,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/slowbro-6",
+     "priceNzd": 12.12,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "091",
+   "name": "Dhelmise",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/091",
+   "marketEur": 2.49,
+   "marketNzd": 4.91,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/dhelmise-8",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "092",
+   "name": "Thievul",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/092",
+   "marketEur": 1.58,
+   "marketNzd": 3.12,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/thievul-10",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "093",
+   "name": "Bastiodon",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/093",
+   "marketEur": 1.7,
+   "marketNzd": 3.35,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/bastiodon-3",
+     "priceNzd": 5.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "094",
+   "name": "Toucannon",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/094",
+   "marketEur": 2.12,
+   "marketNzd": 4.18,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/toucannon-3",
+     "priceNzd": 6.0,
+     "inStock": true
+    }
+   ]
+  },
+  {
+   "num": "095",
+   "name": "Silvally",
+   "rarity": "Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/095",
+   "marketEur": 1.99,
+   "marketNzd": 3.93,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/silvally-1",
+     "priceNzd": 6.0,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "096",
+   "name": "Lurantis ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/096",
+   "marketEur": 2.53,
+   "marketNzd": 4.99,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/lurantis-ex-1",
+     "priceNzd": 4.12,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "097",
+   "name": "Wailord ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/097",
+   "marketEur": 2.72,
+   "marketNzd": 5.37,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/wailord-ex",
+     "priceNzd": 7.11,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "098",
+   "name": "Mega Zeraora ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/098",
+   "marketEur": 5.85,
+   "marketNzd": 11.54,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-zeraora-ex",
+     "priceNzd": 10.22,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "099",
+   "name": "Mega Chandelure ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/099",
+   "marketEur": 5.58,
+   "marketNzd": 11.01,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-chandelure-ex",
+     "priceNzd": 9.85,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "100",
+   "name": "Rampardos ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/100",
+   "marketEur": 2.35,
+   "marketNzd": 4.64,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/rampardos-ex",
+     "priceNzd": 4.34,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "101",
+   "name": "Mega Darkrai ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/101",
+   "marketEur": 8.14,
+   "marketNzd": 16.06,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-darkrai-ex",
+     "priceNzd": 11.1,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "102",
+   "name": "Morpeko ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/102",
+   "marketEur": 3.4,
+   "marketNzd": 6.71,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/morpeko-ex",
+     "priceNzd": 7.07,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "103",
+   "name": "Mega Excadrill ex",
+   "rarity": "Ultra Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/103",
+   "marketEur": 5.03,
+   "marketNzd": 9.93,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-excadrill-ex",
+     "priceNzd": 6.02,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "104",
+   "name": "Brave Bangle",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/104",
+   "marketEur": 2.59,
+   "marketNzd": 5.11,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/brave-bangle-1",
+     "priceNzd": 4.45,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "105",
+   "name": "Crushing Hammer",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/105",
+   "marketEur": 3.23,
+   "marketNzd": 6.37,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/crushing-hammer-5",
+     "priceNzd": 7.44,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "106",
+   "name": "Dark Bell",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/106",
+   "marketEur": 1.79,
+   "marketNzd": 3.53,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/dark-bell-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "107",
+   "name": "Energy Switch",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/107",
+   "marketEur": 2.52,
+   "marketNzd": 4.97,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/energy-switch-5",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "108",
+   "name": "Gladion's Final Battle",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/108",
+   "marketEur": 2.68,
+   "marketNzd": 5.29,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gladions-final-battle-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "109",
+   "name": "Gwynn",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/109",
+   "marketEur": 6.64,
+   "marketNzd": 13.1,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gwynn-1",
+     "priceNzd": 10.82,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "110",
+   "name": "Iron Defender",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/110",
+   "marketEur": 1.4,
+   "marketNzd": 2.76,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/iron-defender-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "111",
+   "name": "Misty's Vitality",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/111",
+   "marketEur": 10.44,
+   "marketNzd": 20.6,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mistys-vitality-1",
+     "priceNzd": 16.05,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "112",
+   "name": "Rust Syndicate Grunt",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/112",
+   "marketEur": 1.92,
+   "marketNzd": 3.79,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/rust-syndicate-grunt-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "113",
+   "name": "Tremendous Bomb",
+   "rarity": "Ultra Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/113",
+   "marketEur": 1.26,
+   "marketNzd": 2.49,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/tremendous-bomb-1",
+     "priceNzd": 3.99,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "114",
+   "name": "Mega Zeraora ex",
+   "rarity": "Special Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/114",
+   "marketEur": 41.56,
+   "marketNzd": 82.02,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-zeraora-ex-2",
+     "priceNzd": 57.28,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "115",
+   "name": "Mega Chandelure ex",
+   "rarity": "Special Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/115",
+   "marketEur": 26.99,
+   "marketNzd": 53.26,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-chandelure-ex-2",
+     "priceNzd": 54.47,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "116",
+   "name": "Mega Darkrai ex",
+   "rarity": "Special Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/116",
+   "marketEur": 177.93,
+   "marketNzd": 351.14,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-darkrai-ex-1",
+     "priceNzd": 249.6,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "117",
+   "name": "Morpeko ex",
+   "rarity": "Special Illustration Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/117",
+   "marketEur": 54.36,
+   "marketNzd": 107.28,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/morpeko-ex-2",
+     "priceNzd": 102.22,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "118",
+   "name": "Gladion's Final Battle",
+   "rarity": "Special Illustration Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/118",
+   "marketEur": 20.1,
+   "marketNzd": 39.67,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gladions-final-battle-2",
+     "priceNzd": 39.04,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "119",
+   "name": "Gwynn",
+   "rarity": "Special Illustration Rare",
+   "category": "Trainer",
+   "image": "https://assets.tcgdex.net/en/me/me05/119",
+   "marketEur": 22.3,
+   "marketNzd": 44.01,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/gwynn-2",
+     "priceNzd": 42.51,
+     "inStock": false
+    }
+   ]
+  },
+  {
+   "num": "120",
+   "name": "Mega Darkrai ex",
+   "rarity": "Mega Hyper Rare",
+   "category": "Pokemon",
+   "image": "https://assets.tcgdex.net/en/me/me05/120",
+   "marketEur": 128.27,
+   "marketNzd": 253.14,
+   "singles": [
+    {
+     "store": "getthosecards",
+     "url": "https://getthosecards.co.nz/products/mega-darkrai-ex-3",
+     "priceNzd": 236.02,
+     "inStock": false
+    }
+   ]
+  }
+ ]
+}

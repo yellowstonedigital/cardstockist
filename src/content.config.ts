@@ -24,6 +24,8 @@ const sets = defineCollection({
     products: z
       .array(z.object({ name: z.string(), rrp: z.string().optional() }))
       .default([]),
+    tcgdexId: z.string().optional(),
+    sealed: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });
